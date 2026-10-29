@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
-*.json
+bot_users.json
+news_subscriptions.json
+bot_subscriptions.json
