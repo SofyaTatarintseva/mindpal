@@ -24,7 +24,7 @@ const openai = new OpenAI({
   baseURL: 'https://api.302.ai/v1'
 });
 
-app.post('/api/analyze', async (req, res) => {
+app.post('/analyze', async (req, res) => {
   const { text } = req.body;
 
   if (!text || text.length < 3) {
@@ -70,7 +70,7 @@ app.post('/api/analyze', async (req, res) => {
     res.status(500).json({ error: 'Ошибка при обращении к ИИ' });
   }
 });
-app.post('/api/decompose', async (req, res) => {
+app.post('/decompose', async (req, res) => {
   const { task } = req.body;
 
   if (!task || task.length < 3) {
@@ -110,7 +110,7 @@ app.post('/api/decompose', async (req, res) => {
     res.status(500).json({ error: 'Ошибка при обращении к ИИ' });
   }
 });
-app.get('/api/health/checklist', (req, res) => {
+app.get('/health/checklist', (req, res) => {
   const { gender, age } = req.query;
 
   // Валидация
