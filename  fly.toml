@@ -3,7 +3,7 @@ app = "mindpal"
 primary_region = "ams"
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = "server/Dockerfile"
 
 [env]
   PORT = "3001" # <-- ВАЖНО: тот же порт, что в твоем index.js или .env
