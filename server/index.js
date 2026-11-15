@@ -13,8 +13,9 @@ const port = process.env.PORT || 3001;
 app.use(cors({ 
   origin: [
     'http://localhost:5173',
-    'https://sofyatatarintseva.github.io/mindpal'
-  ] 
+    'https://sofyatatarintseva.github.io'
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
