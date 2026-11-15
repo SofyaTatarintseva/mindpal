@@ -1,0 +1,17 @@
+# Название твоего приложения на Fly.io (можно оставить это, Fly сам подставит нужное)
+app = "mindpal"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3001" # <-- ВАЖНО: тот же порт, что в твоем index.js или .env
+
+[http_service]
+  internal_port = 3001 # <-- Должен совпадать с PORT выше
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
