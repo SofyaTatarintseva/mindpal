@@ -10,7 +10,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ 
+  origin: [
+    'http://localhost:5173',
+    'https://sofyatatarintseva.github.io/mindpal'
+  ] 
+}));
+
 app.use(express.json());
 
 const openai = new OpenAI({

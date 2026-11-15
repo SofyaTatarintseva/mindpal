@@ -14,8 +14,7 @@ export interface AnalysisResult {
   recommendation: string; // Совет от ИИ (например, "Выпей чай и отдохни")
 }
 // Базовый URL твоего бэкенда (Node.js)
-// Если ты запускаешь проект локально, это будет localhost:3001
-const API_URL = 'http://localhost:3001/api/analyze';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/analyze`;
 
 /**
  * Функция для отправки текста на анализ к ИИ.
@@ -47,7 +46,7 @@ export const analyzeEmotions = async (text: string): Promise<AnalysisResult> => 
     
     // Если это ошибка сети (сервер не запущен), выдаем понятное сообщение
     if (error instanceof TypeError && error.message === 'Failed to fetch') {
-      throw new Error('Не удалось подключиться к серверу. Убедитесь, что бэкенд запущен (npm start в папке server).', { cause: error });
+      throw new Error('Не удалось подключиться к серверу. Убедитесь, что бэкенд запущен', { cause: error });
     }
     
     // Пробрасываем ошибку дальше, чтобы компонент мог ее показать

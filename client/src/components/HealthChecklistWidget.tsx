@@ -28,7 +28,7 @@ const HealthChecklistWidget = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:3001/api/health/checklist?gender=${gender}&age=${age}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/health/checklist?gender=${gender}&age=${age}`);
       if (!response.ok) throw new Error('Ошибка сервера');
       const data = await response.json();
       setItems(data);
