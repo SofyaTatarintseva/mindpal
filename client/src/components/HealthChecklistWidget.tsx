@@ -10,6 +10,7 @@ interface HealthItem {
   minAge?: number;
   maxAge?: number;
   source: 'oms' | 'private';
+  zone?: string;
 }
 
 const HealthChecklistWidget = () => {
