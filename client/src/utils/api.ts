@@ -13,8 +13,8 @@ export interface AnalysisResult {
   summary: string;      // Короткая фраза от ИИ (например, "Ты устала, но держишься")
   recommendation: string; // Совет от ИИ (например, "Выпей чай и отдохни")
 }
-// Базовый URL твоего бэкенда (Node.js)
-const API_URL = `${import.meta.env.VITE_API_URL}/api/analyze`;
+
+const API_URL = `${import.meta.env.VITE_API_URL}/analyze`;
 
 /**
  * Функция для отправки текста на анализ к ИИ.
